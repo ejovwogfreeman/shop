@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Redirect routes with a trailing slash to the same route without the trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]
+
+# Static Routes
+RewriteRule ^$ index.php [L]
+RewriteRule ^login$ login.php [L]
+RewriteRule ^logout$ logout.php [L]
+RewriteRule ^register$ register.php [L]
+RewriteRule ^cart$ cart.php [L]
+RewriteRule ^product$ product.php [L]
+RewriteRule ^products$ products.php [L]
+
+
